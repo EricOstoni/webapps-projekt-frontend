@@ -95,7 +95,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "https://oilshop-backend.onrender.com/orders/order",
+          "https://oilshop-backend.onrender.com/orders/",
           order,
           {
             headers: {
