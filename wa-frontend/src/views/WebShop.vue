@@ -53,7 +53,7 @@ export default {
   methods: {
     getProducts() {
       axios
-        .get("https://oilshopostoni.onrender.com/products/product")
+        .get("https://oilshop-backend.onrender.com/products/product")
         .then((response) => {
           this.products = response.data.map((product) => {
             return {
@@ -70,7 +70,7 @@ export default {
       const token = localStorage.getItem("token");
       axios
         .post(
-          `https://oilshopostoni.onrender.com/users/add`,
+          `https://oilshop-backend.onrender.com/users/add`,
           {
             productId: productId,
             quantity: 1,

@@ -35,7 +35,7 @@ export default {
       }
 
       try {
-        let res = await axios.post("https://oilshopostoni.onrender.com/auth/login", {
+        let res = await axios.post("https://oilshop-backend.onrender.com/auth/login", {
           email: this.email,
           password: this.password,
         });
