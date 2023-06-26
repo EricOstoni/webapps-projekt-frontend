@@ -1,12 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ShopVue from "@/views/Shop.vue";
-import AccountVue from "../views/Account.vue"
-import CartVue from "../views/Cart.vue" 
-import LoginVue from "../views/Login.vue"
-import OneItemVue from "@/views/OneItem.vue";
-import SingUpVue from "@/views/SingUp.vue";
+import ShopVue from "../views/WebShop.vue";
+import CartShop from "../views/CartShop.vue";
+import LoginVue from "../views/LogIn.vue";
 
+import SignUpVue from "../views/SignUp.vue";
 
 const routes = [
   {
@@ -22,15 +20,9 @@ const routes = [
   },
 
   {
-    path: "/account",
-    name: "account",
-    component: AccountVue,
-  },
-
-  {
     path: "/cart",
     name: "cart",
-    component: CartVue,
+    component: CartShop,
   },
 
   {
@@ -40,17 +32,10 @@ const routes = [
   },
 
   {
-    path: "/oneitem",
-    name: "oneitem",
-    component: OneItemVue,
+    path: "/signup",
+    name: "signup",
+    component: SignUpVue,
   },
-
-  {
-    path: "/singup",
-    name: "singup",
-    component: SingUpVue,
-  },
-
 ];
 
 const router = createRouter({
