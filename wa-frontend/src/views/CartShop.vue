@@ -95,7 +95,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "http://localhost:3000/orders/order",
+          "https://oilshopostoni.onrender.com/orders/order",
           order,
           {
             headers: {
@@ -123,7 +123,7 @@ export default {
     async removeFromCart(productId) {
       try {
         const response = await axios.delete(
-          "http://localhost:3000/users/remove",
+          "https://oilshopostoni.onrender.com/users/remove",
           {
             headers: {
               "Content-Type": "application/json",
@@ -158,7 +158,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get("http://localhost:3000/users/cart", {
+      const response = await axios.get("https://oilshopostoni.onrender.com/users/cart", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

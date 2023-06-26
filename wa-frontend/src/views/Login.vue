@@ -35,7 +35,7 @@ export default {
       }
 
       try {
-        let res = await axios.post("http://localhost:3000/auth/login", {
+        let res = await axios.post("https://oilshopostoni.onrender.com/auth/login", {
           email: this.email,
           password: this.password,
         });
