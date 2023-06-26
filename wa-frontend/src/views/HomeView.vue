@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    <NavBar @navigate="scrollToSection" />
   </div>
 
   <div class="main-content">
@@ -8,7 +8,7 @@
     <h2>more than extra virgin oil</h2>
   </div>
 
-  <div class="about-us">
+  <div ref="about-us" class="about-us">
     <div class="container">
       <h1>About us</h1>
       <p>
@@ -32,16 +32,21 @@
 
   <h1 class="products-h1">Our products</h1>
 
-  <div class="products">
-    <img src="../assets/batch_Romano-velika.png" alt="" />
-    <img src="../assets/batch_Istra-veliko.png" alt="" />
-    <img src="../assets/batch_Mlado-velika.png" alt="" />
-    <img src="../assets/batch_Organic-velika.png" alt="" />
+  <div ref="products" class="products">
+    <img
+      href="/shop"
+      src="../assets/batch_Romano-velika.png"
+      alt=""
+      @click="goToShop"
+    />
+    <img src="../assets/batch_Istra-veliko.png" alt="" @click="goToShop" />
+    <img src="../assets/batch_Mlado-velika.png" alt="" @click="goToShop" />
+    <img src="../assets/batch_Organic-velika.png" alt="" @click="goToShop" />
   </div>
 
   <div class=""></div>
 
-  <div class="contact">
+  <div ref="contact" class="contact">
     <GoogleMap />
   </div>
 
@@ -58,6 +63,14 @@ import FooterVue from "@/components/FooterVue.vue";
 export default {
   name: "HomeView",
   components: { NavBar, GoogleMap, FooterVue },
+  methods: {
+    scrollToSection(section) {
+      this.$refs[section].scrollIntoView({ behavior: "smooth" });
+    },
+    goToShop() {
+      this.$router.push("/shop");
+    },
+  },
 };
 </script>
 
