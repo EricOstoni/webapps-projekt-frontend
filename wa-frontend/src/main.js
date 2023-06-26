@@ -3,11 +3,15 @@ import App from "./App.vue";
 import router from "./router";
 import axios from "axios";
 
+
 axios.defaults.baseURL = "https://oilshopostoni.onrender.com";
 
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
 const app = createApp(App);
+
+app.use(router);
+
 
 app.config.globalProperties.axios = axios;
 
