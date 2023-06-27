@@ -26,7 +26,7 @@
 import axios from "axios";
 
 export default {
-  
+  name: "SignUp",
   data() {
     return {
       username: "",
@@ -42,11 +42,14 @@ export default {
       }
 
       try {
-        let response = await axios.post("https://oilshop-backend.onrender.com/auth/register", {
-          username: this.username,
-          email: this.email,
-          password: this.password,
-        });
+        let response = await axios.post(
+          "https://oilshop-backend.onrender.com/auth/register",
+          {
+            username: this.username,
+            email: this.email,
+            password: this.password,
+          }
+        );
 
         if (response.status === 200) {
           this.$router.push("/login");
@@ -115,8 +118,6 @@ button {
   transition: background-color 0.3s ease;
   margin-top: 5px;
 }
-
-
 
 button:hover {
   background-color: #424;

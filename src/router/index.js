@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ShopVue from "../views/WebShop.vue";
 import CartShop from "../views/CartShop.vue";
-import LogIn from "../views/LogIn.vue";
+import LogIn from "../views/Login.vue";
 
 import SignUp from "../views/SignUp.vue";
 
@@ -39,7 +39,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 

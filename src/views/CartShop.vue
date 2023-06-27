@@ -57,7 +57,7 @@
       </label>
       <button type="submit">Create Order</button>
     </form>
-  </div> 
+  </div>
 </template>
 
 <script>
@@ -65,6 +65,7 @@ import NavCart from "@/components/NavCart.vue";
 import axios from "axios";
 
 export default {
+  name: "CartShop",
   components: { NavCart },
   data() {
     return {
@@ -158,11 +159,14 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get("https://oilshop-backend.onrender.com/users/cart", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(
+        "https://oilshop-backend.onrender.com/users/cart",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       this.cart = response.data.filter((item) => item.product);
     } catch (error) {
       console.error(error);

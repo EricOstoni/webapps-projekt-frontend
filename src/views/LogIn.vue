@@ -13,6 +13,7 @@
         <input type="password" id="password" v-model="password" required />
       </div>
       <button type="submit">Login</button>
+      <router-link to="/signup"><button>Sign Up</button></router-link>
     </form>
   </div>
 </template>
@@ -36,10 +37,13 @@ export default {
       }
 
       try {
-        let res = await axios.post("https://oilshop-backend.onrender.com/auth/login", {
-          email: this.email,
-          password: this.password,
-        });
+        let res = await axios.post(
+          "https://oilshop-backend.onrender.com/auth/login",
+          {
+            email: this.email,
+            password: this.password,
+          }
+        );
 
         localStorage.setItem("token", res.data.token);
         this.$router.push("/shop");

@@ -1,17 +1,17 @@
 <template>
   <nav class="navbar">
     <div class="shop-name">
-      <a href="/">
+      <router-link to="/">
         <h1>Oil Shop</h1>
-      </a>
+      </router-link>
     </div>
     <div class="icons">
-      <a href="/cart">
+      <router-link to="/cart">
         <i class="fa fa-shopping-cart"></i>
-      </a>
-      <a href="/signup">
+      </router-link>
+      <!-- <router-link to="/signup">
         <i class="fa fa-user"></i>
-      </a>
+      </router-link> -->
     </div>
     <p></p>
   </nav>

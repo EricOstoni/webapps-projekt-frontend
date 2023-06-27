@@ -16,7 +16,7 @@ export default {
       this.$router.push("/shop");
     },
     scrollTo(section) {
-      this.$emit('navigate', section);
+      this.$emit("navigate", section);
     },
   },
 };

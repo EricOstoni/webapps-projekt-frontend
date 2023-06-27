@@ -53,7 +53,7 @@ export default {
   methods: {
     getProducts() {
       axios
-        .get("https://oilshop-backend.onrender.com/products/product")
+        .get("https://oilshop-backend.onrender.com/products/")
         .then((response) => {
           this.products = response.data.map((product) => {
             return {

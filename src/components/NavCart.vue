@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="shop-name">
-      <a href="/shop">
+      <router-link to="/shop">
         <h1>Oil Shop</h1>
-      </a>
+      </router-link>
     </div>
 
     <p></p>
