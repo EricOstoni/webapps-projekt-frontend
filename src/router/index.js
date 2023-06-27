@@ -5,7 +5,7 @@ import CartShop from "../views/CartShop.vue";
 import LogIn from "../views/Login.vue";
 
 import SignUp from "../views/SignUp.vue";
-
+/* eslint-disable */
 const routes = [
   {
     path: "/",
