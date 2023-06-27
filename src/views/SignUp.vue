@@ -1,9 +1,13 @@
 <template>
-  <div class="login-container">
-    <div class="login-header">
-      <h2>Login</h2>
+  <div class="signup-container">
+    <div class="signup-header">
+      <h2>Sign Up</h2>
     </div>
-    <form @submit.prevent="Login">
+    <form @submit.prevent="submitForm">
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" v-model="username" required />
+      </div>
       <div class="input-group">
         <label for="email">Email:</label>
         <input type="email" id="email" v-model="email" required />
@@ -12,7 +16,8 @@
         <label for="password">Password:</label>
         <input type="password" id="password" v-model="password" required />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">Sign Up</button>
+      <router-link to="/login"> <button>Login</button></router-link>
     </form>
   </div>
 </template>
@@ -21,29 +26,35 @@
 import axios from "axios";
 
 export default {
+  
   data() {
     return {
+      username: "",
       email: "",
       password: "",
     };
   },
   methods: {
-    async Login() {
-      if (!this.email || !this.password) {
-        alert("Please fill in both fields");
+    async submitForm() {
+      if (!this.username || !this.email || !this.password) {
+        alert("Please fill in all fields");
         return;
       }
 
       try {
-        let res = await axios.post("https://oilshop-backend.onrender.com/auth/login", {
+        let response = await axios.post("https://oilshop-backend.onrender.com/auth/register", {
+          username: this.username,
           email: this.email,
           password: this.password,
         });
 
-        localStorage.setItem("token", res.data.token);
-        this.$router.push("/shop");
-      } catch (err) {
-        console.log(err);
+        if (response.status === 200) {
+          this.$router.push("/login");
+        } else {
+          alert("Sign up failed: " + response.data);
+        }
+      } catch (error) {
+        console.error("Error:", error);
       }
     },
   },
@@ -51,7 +62,7 @@ export default {
 </script>
 
 <style scoped>
-.login-container {
+.signup-container {
   width: 320px;
   margin: 50px auto;
   border-radius: 15px;
@@ -60,12 +71,12 @@ export default {
   background: white;
 }
 
-.login-header {
+.signup-header {
   background-color: #556b2f;
   padding: 20px 20px;
 }
 
-.login-header h2 {
+.signup-header h2 {
   color: white;
   text-align: center;
   margin: 0;
@@ -102,7 +113,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 5px;
 }
+
+
 
 button:hover {
   background-color: #424;
