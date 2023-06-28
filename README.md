@@ -1,24 +1,22 @@
-# wa-frontend
+# Oil Shop Ostoni
+Aplikacija sluzi za prodaju maslinovog ulja.
 
-## Project setup
-```
-npm install
-```
+U aplikaciji je moguće pogledati proizvode koje se prodaju, te u slučaju kupnje moguće je kreirati vlastiti profil s kojim korisnik može dodavati proizvode u košarici i napravit narudžbu. 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Aplikacija ima signup/login korisnik može izraditi svoj profil
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Javni link na aplikaciju
+link : https://oilshop-frontend.onrender.com/
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Javni git repository za deploy 
+Imo sam problema kod deploy-a, morao sam napraviti novi git repo. 
+link : https://github.com/EricOstoni/wa.git
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Organizacija
+Sveučilište Jurja Dobrile u Puli
+Tehnički fakultet u Puli,  smjer računarstvo.
+
+Web Aplikacije, ak.god. 2022./2023.
+Mentor: Nikola Tanković (https://fipu.unipu.hr/fipu/nikola.tankovic, nikola.tankovic@unipu.hr)
+
+
